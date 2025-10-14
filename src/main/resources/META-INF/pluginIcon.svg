@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+    <title>Agent Terminal</title>
+    <desc>Simple agent/terminal glyph for JetBrains plugin icon (light theme)</desc>
+
+    <!-- 背景：浅色主题下略深一点的蓝色块，圆角 10 -->
+    <rect x="2" y="2" width="36" height="36" rx="10" fill="#2F74FF"/>
+    <!-- 右下角高光 -->
+    <path d="M38 28v10H28c4.9-1.7 8.3-5.1 10-10z" fill="#4F8CFF" opacity=".55"/>
+
+    <!-- 中心图形：终端/Agent 的抽象（>_ + 光标） -->
+    <!-- 箭头“>” -->
+    <path d="M12 15l8 5-8 5" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- 下划线“_” -->
+    <path d="M22 25h6" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- 细节：顶部“窗口条”三点 -->
+    <circle cx="10.5" cy="10.5" r="1.2" fill="#BFD6FF"/>
+    <circle cx="14"   cy="10.5" r="1.2" fill="#BFD6FF"/>
+    <circle cx="17.5" cy="10.5" r="1.2" fill="#BFD6FF"/>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agent">
+    <!-- 背景终端框（圆角 2） -->
+    <rect x="1.5" y="2" width="13" height="11.5" rx="2" fill="#2F74FF"/>
+    <!-- 终端标题栏三点 -->
+    <circle cx="3.5" cy="3.8" r="0.7" fill="#BFD6FF"/>
+    <circle cx="5.2" cy="3.8" r="0.7" fill="#BFD6FF"/>
+    <circle cx="6.9" cy="3.8" r="0.7" fill="#BFD6FF"/>
+    <!-- >_ 提示符 -->
+    <path d="M4.2 6.8l3 1.9-3 1.9" fill="none" stroke="white" stroke-width="1.4"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8.2 10.6h3.1" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.17.3'
+}
+
+group = 'com.cursor.agent'
+version = '1.0.6'
+
+repositories { mavenCentral() }
+
+dependencies {
+    // No external dependencies needed - plugin only uses IntelliJ Platform APIs
+}
+
+intellij {
+    version = '2023.2'
+    type = 'IC'
+    plugins = ['org.jetbrains.plugins.terminal']
+}
+
+tasks.patchPluginXml {
+    sinceBuild = '232'
+    untilBuild = ''
+}
+
+tasks.buildSearchableOptions { enabled = false }
+
+// 🔒 先统一禁用签名和下载 ZIP Signer
+tasks.named('signPlugin').configure { enabled = false }
+tasks.named('downloadZipSigner').configure { enabled = false }
+
+publishPlugin {
+    token = System.getenv('PUBLISH_TOKEN')
+}
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(17) }
+}
+tasks.withType(JavaCompile).configureEach {
+    options.release = 17
+}

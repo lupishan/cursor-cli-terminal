@@ -1,0 +1,147 @@
+<idea-plugin>
+    <id>cn.lupishan.agent</id>
+    <name>Cursor CLI Terminal</name>
+    <version>1.0.6</version>
+
+    <vendor email="pishan.lu@gmail.com" url="https://lupishan.github.io">Max Lu</vendor>
+
+    <!-- 兼容范围：232+ 覆盖 2023.2 起的大多数版本。后续可再调大/小。 -->
+    <idea-version since-build="232.0" />
+
+    <description><![CDATA[
+<p><b>Cursor CLI Terminal</b> — Run <code>cursor-agent</code> seamlessly inside IntelliJ-based IDEs.
+No more switching to external terminals.</p>
+
+<p>在 IntelliJ IDEA / Android Studio 内直接运行本地 <code>cursor-agent</code> —— 无需切换外部终端。</p>
+
+<hr/>
+
+<h3>✨ 功能亮点 / Key Features</h3>
+<ul>
+  <li><b>一键聚焦 / 重启</b> — 用 Tools → Focus / Restart 快速切换终端；按住 Shift 即可重建会话。<br/>
+      One-click focus & restart (hold Shift to clean restart).</li>
+  <li><b>自动启动 / Auto-start</b> — PATH 中检测到 <code>cursor-agent</code> 即自动运行，无需额外配置。<br/>
+      Auto-starts if <code>cursor-agent</code> is on PATH.</li>
+  <li><b>界面简洁 / Clean UI</b> — 独立右侧 ToolWindow，隐藏底部 Terminal，避免重复窗口。<br/>
+      Dedicated right-side ToolWindow; bottom terminal stays hidden.</li>
+  <li><b>智能提示 / Smart Hints</b> — 未检测到 CLI 时自动气泡提醒，安装后重新打开即可。<br/>
+      Balloon hints if CLI missing.</li>
+</ul>
+
+<hr/>
+
+<h3>🛠 使用场景 / Why Use It</h3>
+<ul>
+  <li>将 <b>AI CLI</b> 无缝嵌入 IDE，边写代码边调用 AI。</li>
+  <li>避免 IDE 与外部终端来回切换，提高效率。</li>
+  <li>更符合日常 Cursor 工作流习惯。</li>
+</ul>
+
+<hr/>
+
+<p><i>Disclaimer: This plugin is an independent project and is <b>not affiliated with or endorsed by Cursor</b>.</i><br/>
+<i>免责声明：本插件为独立项目，与 Cursor 无关，不代表其立场或获得授权。</i></p>
+]]></description>
+
+    <change-notes><![CDATA[
+<h3>1.0.6</h3>
+<ul>
+  <li><b>Code Optimization:</b> Removed all unused dependencies (Jackson, Apache HTTP) reducing plugin size by ~3MB.<br/>
+      <em>代码优化：</em> 移除所有未使用的依赖（Jackson、Apache HTTP），插件体积减少约3MB。</li>
+  <li><b>Architecture Cleanup:</b> Deleted unused service and action classes, created shared utility class to eliminate code duplication.<br/>
+      <em>架构清理：</em> 删除未使用的服务和动作类，创建共享工具类消除代码重复。</li>
+  <li><b>Maintenance:</b> Simplified codebase with better structure and reduced complexity.<br/>
+      <em>维护性：</em> 简化代码库，结构更清晰，复杂度更低。</li>
+</ul>
+
+<h3>1.0.5</h3>
+<ul>
+  <li><b>Platform Support Expansion:</b> Removed Java module dependency to support all IntelliJ-based IDEs (PyCharm, WebStorm, PhpStorm, etc.).<br/>
+      <em>平台支持扩展：</em> 移除 Java 模块依赖，支持所有 IntelliJ 系列 IDE（PyCharm、WebStorm、PhpStorm 等）。</li>
+  <li><b>Compatibility:</b> Plugin now works across the entire JetBrains IDE ecosystem, not just Java-focused IDEs.<br/>
+      <em>兼容性：</em> 插件现在可在整个 JetBrains IDE 生态系统中工作，不仅限于 Java 相关的 IDE。</li>
+</ul>
+
+<h3>1.0.4</h3>
+<ul>
+  <li><b>Description & Onboarding:</b> Updated plugin description with structured HTML and added a clear “Getting Started” guide (EN/ZH).<br/>
+      <em>描述与上手：</em> 使用 HTML 重写插件介绍，并新增中英双语的「快速上手」指引。</li>
+  <li><b>Marketplace compliance:</b> Ensured Latin-first description and formatting to avoid single-line rendering issues.<br/>
+      <em>合规：</em> 描述以英文开头并优化格式，避免被压缩成单行的渲染问题。</li>
+</ul>
+
+<h3>1.0.3</h3>
+<ul>
+  <li><b>更流畅 / Smoother:</b> 启动与终端交互体验进一步优化，避免阻塞 UI。<br/>
+      Startup & terminal interaction polished for a smoother, non-blocking experience.</li>
+  <li><b>更清晰 / Clearer:</b> 优化描述与提示信息，用户体验更直观。<br/>
+      Improved messages & hints for clarity.</li>
+</ul>
+
+<h3>1.0.2</h3>
+<ul>
+  <li><b>统一命名 / Unified Naming:</b> 插件、工具窗与菜单统一为 <code>Cursor CLI Terminal</code>。<br/>
+      Plugin, ToolWindow, and menus unified under the name <code>Cursor CLI Terminal</code>.</li>
+  <li><b>重启更干净 / Cleaner Restart:</b> 重启后不再残留回显，提示符保持整洁。<br/>
+      No stray command echoes after restart; prompt stays tidy.</li>
+  <li><b>防重复启动 / Single Autorun:</b> 每次会话仅自动启动一次，避免二次启动。<br/>
+      Ensures only one auto-start per session.</li>
+  <li><b>终端行为优化 / Terminal Behavior:</b> 隐藏底部 Terminal，仅保留右侧工具窗。<br/>
+      Bottom Terminal stays hidden; right-side ToolWindow focused.</li>
+  <li><b>构建稳定性 / Build Reliability:</b> Gradle 签名工具兼容性改进。<br/>
+      Safer Gradle config when signature tools unavailable.</li>
+</ul>
+
+<h3>1.0.1</h3>
+<ul>
+  <li><b>启动更干净 / Cleaner Startup:</b> 启动时不再多余回显。<br/>
+      No extra echoes on startup.</li>
+  <li><b>一键重启 / One-key Restart:</b> 按住 <kbd>Shift</kbd> 即可重建会话。<br/>
+      Hold <kbd>Shift</kbd> to rebuild session.</li>
+  <li><b>只保留右侧终端 / Right-side Only:</b> 底部 Terminal 默认隐藏。<br/>
+      Bottom Terminal hidden by default.</li>
+  <li><b>未安装提示 / Missing CLI Hint:</b> 未检测到 CLI 时气泡提醒。<br/>
+      Balloon hint if CLI not installed.</li>
+  <li><b>稳定性 / Stability:</b> 启动逻辑统一，避免重复运行。<br/>
+      Unified startup logic, no double launches.</li>
+</ul>
+
+<h3>1.0.0</h3>
+<ul>
+  <li><b>初始版本 / Initial Release:</b> 在右侧工具窗内运行本地 <code>cursor-agent</code>。<br/>
+      Run local <code>cursor-agent</code> inside right-side ToolWindow.</li>
+  <li><b>自动启动 / Auto Start:</b> 打开工具窗即自动启动。<br/>
+      Opens & starts agent when ToolWindow is shown.</li>
+  <li><b>聚焦/重启 / Focus & Restart:</b> 快速聚焦，Shift+点击可重启清理会话。<br/>
+      Focus quickly; Shift+Restart for clean session.</li>
+  <li><b>非官方 / Unofficial:</b> 本插件与 Cursor 无关。<br/>
+      Not affiliated with Cursor.</li>
+</ul>
+]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.terminal</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+                id="Cursor CLI Terminal"
+                anchor="right"
+                factoryClass="cn.lupishan.agent.CursorToolWindowFactory"
+                canCloseContents="true"
+                icon="/icons/agent_gray.svg"/>
+        <notificationGroup
+                id="cursor.agent.notifications"
+                displayType="BALLOON"
+                isLogByDefault="true"/>
+    </extensions>
+
+    <actions>
+        <action id="CursorAgent.StartAction"
+                class="cn.lupishan.agent.StartCursorAgentAction"
+                text="Focus / Restart Cursor CLI Terminal"
+                description="Focus the ToolWindow; hold Shift to restart the session">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift A"/>
+        </action>
+    </actions>
+</idea-plugin>
