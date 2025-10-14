@@ -31,16 +31,28 @@ public final class CursorAgentUtils {
             String p = expandHome(env.trim());
             if (new File(p).canExecute()) return p;
         }
-        try {
-            Process proc = new ProcessBuilder("/bin/sh", "-lc", "command -v cursor-agent || true")
-                    .directory(workDir)
-                    .redirectErrorStream(true)
-                    .start();
-            proc.waitFor();
-            byte[] out = proc.getInputStream().readAllBytes();
-            String resolved = new String(out, StandardCharsets.UTF_8).trim();
-            if (!resolved.isEmpty() && new File(resolved).canExecute()) return resolved;
-        } catch (Exception ignore) {}
+        
+        // Try multiple shells to maximize compatibility
+        String[] shells = {
+            "/bin/zsh",  // macOS default shell (handles oh-my-zsh)
+            "/bin/bash", // Common alternative
+            "/bin/sh"    // Fallback
+        };
+        
+        for (String shell : shells) {
+            if (!new File(shell).exists()) continue;
+            try {
+                Process proc = new ProcessBuilder(shell, "-lc", "command -v cursor-agent || true")
+                        .directory(workDir)
+                        .redirectErrorStream(true)
+                        .start();
+                proc.waitFor();
+                byte[] out = proc.getInputStream().readAllBytes();
+                String resolved = new String(out, StandardCharsets.UTF_8).trim();
+                if (!resolved.isEmpty() && new File(resolved).canExecute()) return resolved;
+            } catch (Exception ignore) {}
+        }
+        
         return null;
     }
 

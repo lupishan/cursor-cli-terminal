@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>cn.lupishan.agent</id>
     <name>Cursor CLI Terminal</name>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 
     <vendor email="pishan.lu@gmail.com" url="https://lupishan.github.io">Max Lu</vendor>
 
@@ -44,6 +44,14 @@ No more switching to external terminals.</p>
 ]]></description>
 
     <change-notes><![CDATA[
+<h3>1.0.7</h3>
+<ul>
+  <li><b>Bug Fix:</b> Fixed cursor-agent detection on macOS with zsh/oh-my-zsh. Plugin now tries multiple shells (zsh, bash, sh) to properly detect cursor-agent in PATH.<br/>
+      <em>Bug 修复：</em> 修复了 macOS + zsh/oh-my-zsh 环境下 cursor-agent 检测失败的问题。插件现在会尝试多个 shell（zsh、bash、sh）来正确检测 PATH 中的 cursor-agent。</li>
+  <li><b>Compatibility:</b> Better support for different shell configurations and macOS environments.<br/>
+      <em>兼容性：</em> 更好地支持不同的 shell 配置和 macOS 环境。</li>
+</ul>
+
 <h3>1.0.6</h3>
 <ul>
   <li><b>Code Optimization:</b> Removed all unused dependencies (Jackson, Apache HTTP) reducing plugin size by ~3MB.<br/>
