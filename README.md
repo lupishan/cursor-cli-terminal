@@ -17,6 +17,10 @@ A JetBrains IDE plugin that runs `cursor-agent` (Cursor AI CLI) directly inside 
 - **Focus & Restart**: Quick shortcuts to focus or restart the agent (hold Shift to clean restart)
 - **Privacy-first**: No network calls, no data collection
 
+### 🌍 Community Builds
+
+- [Claude Code Terminal](https://github.com/hamdiwanis/claude-terminal-intelija-plugin) — Built by [@hamdiwanis](https://github.com/hamdiwanis), adapted from this project to support Claude CLI.
+
 ### 📋 Requirements
 
 - IntelliJ IDEA 2023.2+ (or any JetBrains IDE: PyCharm, WebStorm, PhpStorm, etc.)
@@ -110,6 +114,10 @@ This plugin is an independent project and is **not affiliated with or endorsed b
 - **自动启动**: PATH 中检测到 `cursor-agent` 即自动运行，无需额外配置
 - **界面简洁**: 独立右侧 ToolWindow，隐藏底部 Terminal，避免重复窗口
 - **智能提示**: 未检测到 CLI 时自动气泡提醒
+
+### 🌍 社区构建
+
+- [Claude Code Terminal](https://github.com/hamdiwanis/claude-terminal-intelija-plugin) — 由 [@hamdiwanis](https://github.com/hamdiwanis) 基于本项目改编，支持 Claude CLI。
 
 ### 📋 要求
 
