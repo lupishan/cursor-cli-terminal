@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>cn.lupishan.agent</id>
     <name>Cursor CLI Terminal</name>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
 
     <vendor email="pishan.lu@gmail.com" url="https://lupishan.github.io">Max Lu</vendor>
 
@@ -44,6 +44,14 @@ No more switching to external terminals.</p>
 ]]></description>
 
     <change-notes><![CDATA[
+<h3>1.0.8</h3>
+<ul>
+  <li><b>API Update:</b> Replaced deprecated TerminalView with TerminalToolWindowManager for better compatibility with newer IntelliJ versions. Thanks to @hamdiwanis!<br/>
+      <em>API 更新：</em> 使用 TerminalToolWindowManager 替换已废弃的 TerminalView，更好兼容新版 IntelliJ。感谢 @hamdiwanis 的贡献！</li>
+  <li><b>Community:</b> First community contribution merged! 🎉<br/>
+      <em>社区：</em> 首个社区贡献合并！🎉</li>
+</ul>
+
 <h3>1.0.7</h3>
 <ul>
   <li><b>Bug Fix:</b> Fixed cursor-agent detection on macOS with zsh/oh-my-zsh. Plugin now tries multiple shells (zsh, bash, sh) to properly detect cursor-agent in PATH.<br/>
