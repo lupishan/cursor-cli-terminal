@@ -10,7 +10,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.plugins.terminal.ShellTerminalWidget;
-import org.jetbrains.plugins.terminal.TerminalView;
+import org.jetbrains.plugins.terminal.TerminalToolWindowManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,8 +28,8 @@ public class CursorToolWindowFactory implements ToolWindowFactory {
         JPanel panel = new JPanel(new BorderLayout());
         String workDir = project.getBasePath() != null ? project.getBasePath() : System.getProperty("user.home");
 
-        // 仍用 TerminalView 创建 widget（最兼容），但随后马上隐藏底部 Terminal 工具窗
-        ShellTerminalWidget widget = TerminalView.getInstance(project)
+        // 仍用 TerminalToolWindowManager 创建 widget（最兼容），但随后马上隐藏底部 Terminal 工具窗
+        ShellTerminalWidget widget = TerminalToolWindowManager.getInstance(project)
                 .createLocalShellWidget(workDir, TOOL_WINDOW_ID);
 
         panel.add(widget.getComponent(), BorderLayout.CENTER);
