@@ -80,7 +80,8 @@ This plugin can serve as a reference for building similar integrations with othe
 ### ❓ FAQ
 
 **Q: "cursor-agent not detected" error**  
-A: Make sure `cursor-agent` is installed and in your PATH. Restart the IDE after installation.
+A: Make sure `cursor-agent` is installed and in your PATH. Restart the IDE after installation. 
+For macOS users, if executing `which cursor-agent` in the terminal returns the correct path but it cannot be used in this plugin, please ensure that the PATH variable is also modified in `~/.bash_profile`.
 
 **Q: First-time trust/login prompts**  
 A: Follow the interactive prompts in the terminal window.
@@ -160,6 +161,7 @@ This plugin is an independent project and is **not affiliated with or endorsed b
 
 **提示未检测到 cursor-agent？**  
 请按你系统/团队方式安装，并确保 `cursor-agent` 在 PATH 中；重开工具窗或重启 IDE 后重试。
+对于macOS用户，如果您在终端执行 `which cursor-agent` 返回了正确的路径但无法在本插件中使用，请确保 `~/.bash_profile` 中也进行了PATH变量的修改。
 
 **首次弹出信任/登录界面？**  
 在该终端内按提示键操作即可。
